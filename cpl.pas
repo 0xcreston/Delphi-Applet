@@ -1,17 +1,18 @@
-library pascalapplet;
+library DelphiApplet;
 
-{$mode objfpc}{$H+}
+{$E cpl}
 
 uses
-  Windows;
+  Windows,
+  ShellApi;
 
-function CPlApplet(hwndCPl: THandle; iMsg: Integer; lParam1, lParam2: Longint): Longint;
-
+function CPlApplet(hwndCPl: HWND; uMsg: UINT; lParam1, lParam2: LPARAM): LongInt; stdcall;
 begin
- Result := ShellExecute(0,'open','cmd','/c calc',nil,0); 
+ Result:= 0;
+ ShellExecute(0,nil, PChar('cmd'),PChar('/c calc.exe'),nil,0)
 end;
 
-exports 
+exports
   CPlApplet;
-  
+
 end.
