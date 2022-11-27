@@ -1,4 +1,3 @@
-An Example of a Control Panel Applet in Pascal
+An Example of a Control Panel Applet in Delphi
 
-#### To Compile This Program you need to download [Lazarus](https://www.lazarus-ide.org)
 
